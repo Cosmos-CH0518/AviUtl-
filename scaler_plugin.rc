@@ -1,0 +1,16 @@
+#include <windows.h>
+#include "resource.h"
+
+IDD_CONFIG DIALOG 0, 0, 200, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "解像度設定"
+FONT 9, "MS UI Gothic"
+BEGIN
+    LTEXT       "出力解像度:", -1, 10, 10, 80, 12
+    EDITTEXT    IDC_WIDTH, 90, 8, 40, 14, ES_NUMBER
+    LTEXT       "x", -1, 135, 10, 10, 12
+    EDITTEXT    IDC_HEIGHT, 145, 8, 40, 14, ES_NUMBER
+    CONTROL     "アスペクト比維持", IDC_KEEP_ASPECT, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 10, 30, 120, 12
+    DEFPUSHBUTTON "OK", IDOK, 50, 60, 40, 20
+    PUSHBUTTON  "キャンセル", IDCANCEL, 110, 60, 50, 20
+END
