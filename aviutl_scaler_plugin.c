@@ -6,7 +6,7 @@
 
 #define CONFIG_REG_KEY L"Software\\AviUtlScalerPlugin"
 
-// 設定ダイアログプロシージャ
+
 BOOL CALLBACK ConfigDialogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     static PluginConfig* config;
 
@@ -35,7 +35,7 @@ BOOL CALLBACK ConfigDialogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam
     return FALSE;
 }
 
-// レジストリから設定読み込み
+
 void LoadConfig(PluginConfig* config) {
     HKEY hKey;
     DWORD dwType, dwSize;
@@ -48,7 +48,7 @@ void LoadConfig(PluginConfig* config) {
     }
 }
 
-// レジストリに設定保存
+
 void SaveConfig(const PluginConfig* config) {
     HKEY hKey;
     if(RegCreateKeyEx(HKEY_CURRENT_USER, CONFIG_REG_KEY, 0, NULL, 0, KEY_WRITE, NULL, &hKey, NULL) == ERROR_SUCCESS) {
@@ -59,7 +59,7 @@ void SaveConfig(const PluginConfig* config) {
     }
 }
 
-// メイン処理
+
 BOOL func_proc(void *editp, OutputInfo *oip) {
     static PluginConfig config = {1280, 720, TRUE};
     LoadConfig(&config);
@@ -68,7 +68,6 @@ BOOL func_proc(void *editp, OutputInfo *oip) {
     GetProjectResolution(editp, &original_w, &original_h);
 
     if(original_w == 0 || original_h == 0) {
-        // プロジェクト解像度不明の場合はデフォルト値を使う
         original_w = 1280;
         original_h = 720;
     }
@@ -105,7 +104,7 @@ BOOL func_proc(void *editp, OutputInfo *oip) {
     return TRUE;
 }
 
-// 設定ダイアログ表示
+
 BOOL config_proc(void *editp, void *data) {
     PluginConfig config;
     LoadConfig(&config);
@@ -121,7 +120,7 @@ BOOL config_proc(void *editp, void *data) {
     return FALSE;
 }
 
-// プラグイン定義
+
 EXPORT OutputPlugin *GetOutputPluginTable(void) {
     static OutputPlugin plugin = {
         0,
