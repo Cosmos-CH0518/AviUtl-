@@ -7,10 +7,10 @@ extern "C" {
 
 #include <windows.h>
 
-// AviUtlの出力情報構造体
+
 typedef struct {
     int flag;
-    int width, height;       // 出力解像度
+    int width, height;
     int rate, scale;
     int frame_n;
     int audio_rate;
@@ -18,10 +18,10 @@ typedef struct {
     int audio_n;
     int format;
     int sample_n;
-    void *editp;             // AviUtlの編集情報ポインタ
+    void *editp;
 } OutputInfo;
 
-// プラグイン本体の構造体
+
 typedef struct {
     int flag;
     char *name;
@@ -34,7 +34,7 @@ typedef struct {
     int reserved;
 } OutputPlugin;
 
-// 設定用構造体
+
 typedef struct {
     int target_width;
     int target_height;
@@ -47,12 +47,12 @@ typedef struct {
     int scale_x, scale_y;
 } Object;
 
-// 必要な関数プロトタイプ（本体で実装する想定）
+
 void GetProjectResolution(void *editp, int *width, int *height);
 int GetObjectCount(void *editp);
 Object* GetObject(void *editp, int index);
 
-// プラグインテーブル取得関数
+
 #ifdef _WIN32
 #define EXPORT __declspec(dllexport)
 #else
