@@ -4,4 +4,5 @@
 ・GetProjectResolution、GetObjectCount、GetObjectはAviUtl拡張編集のAPIに合わせて実装してください。
   ここではプロトタイプだけヘッダに宣言しています。
 ・.rcファイルはVisual Studioなどのリソースコンパイラでビルド時にコンパイルしてください。
-・resource.hはIDを一元管理するためのヘッダファイルです
+・resource.hはIDを一元管理するためのヘッダファイルです。
+できたものはAviUtlフォルダ内のPluginsフォルダに入れてください
