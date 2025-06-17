@@ -1,4 +1,4 @@
-# AviUtl出力解像度調整プラグイン
+# AviUtl出力解像度調整プラグインキット
 このコードはAviUtlの出力時に動画の解像度を変換できるツールのキットです。
 注意点・補足
 ・GetProjectResolution、GetObjectCount、GetObjectはAviUtl拡張編集のAPIに合わせて実装してください。
